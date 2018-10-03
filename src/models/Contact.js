@@ -10,10 +10,6 @@ export default function (sequelize, DataTypes) {
     customer_id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      references: {
-        model: 'Customer',
-        key: 'id',
-      },
     },
     number: {
       type: DataTypes.STRING(60),

@@ -6,7 +6,7 @@ class ProspectiveCustomerRepository {
   }
 
   async save(number) {
-    this._prospectiveCustomerdb.create({ number });
+    this._prospectiveCustomerdb.findOrCreate({ where: { number } });
   }
 }
 

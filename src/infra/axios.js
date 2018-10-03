@@ -1,14 +1,20 @@
 import axios from 'axios';
-import userInfoRepository from '../repository/UserInfoRepository';
+import userConfigRepository from '../repository/UserConfigRepository';
 
-userApi = userInfoRepository.findUserApi();
-authorization = userApi.authorization();
+function instance () {
+  return userConfigRepository
+    .findUserApi()
+    .then(userApi => {
+      const authorization = userApi.authorization();
+  
+      return axios.create({
+        baseURL: 'https://api.teravoz.coasm.br',
+        headers: {
+          Authorization: `Basic ${authorization}`,
+        }
+      });
+    });
+};
 
-const instance = axios.create({
-  baseURL: 'https://api.teravoz.com.br',
-  headers: {
-    Authorization: `Basic ${authorization}`,
-  }
-});
 
 export default instance;

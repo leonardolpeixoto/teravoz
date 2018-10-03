@@ -1,4 +1,5 @@
 import models from '../models';
+import logger from '../infra/logger';
 
 class CustomerRepository {
   constructor() {
@@ -6,9 +7,10 @@ class CustomerRepository {
   }
 
   async findByContact(number) {
-    customer = await this._customerdb.findOne({
+    const customer = await this._customerdb.findOne({
       include: [{
         model: models.model('Contact'),
+        required: true,
         where: {
           number
         }

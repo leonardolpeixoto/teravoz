@@ -1,25 +1,26 @@
 import { customerRepository } from '../repository/CustomerRepository';
-import delegate from '../service/delegate';
 import prospectiveCustomerRepository from '../repository/ProspectiveCustomer';
+import { queueRepository } from '../repository/QueueRepository';
+
+import delegate from '../service/delegate';
 
 export default (event) => {
   event.on('call.standby', async ({ their_number, call_id }) => {
     try {
-      customer = await customerRepository.findByContact(their_number);
-      
-      queueName = '';
+      let queueName   = '';
+      const customer  = await customerRepository.findByContact(their_number);
       
       if(customer) {
-        queueName = "CustomerAttendace";
+        queueName = "Customer Attendace";
       } else {
-        queueName = "FirstAttendace";
+        queueName = "First Attendace";
         prospectiveCustomerRepository.save(their_number);
       }
 
-      queue = await queueRepository.findByName(queueName);
-      delegate(call_id, queue.number);
+      const queue = await queueRepository.findByName(queueName);
+      await delegate(call_id, queue.number);
     } catch (error) {
-      event.emit('error', err);
+      event.emit('error', error);
     }
   })
 }
