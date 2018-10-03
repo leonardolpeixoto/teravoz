@@ -2,12 +2,22 @@ import models from '../models';
 
 class CustomerRepository {
   constructor() {
-    this.customerdb = models.model('Customer');
+    this._customerdb = models.model('Customer');
   }
 
-  async findByContact($number) {
-    await this.customerdb.findOne({
-       
-    })
+  async findByContact(number) {
+    customer = await this._customerdb.findOne({
+      include: [{
+        model: models.model('Contact'),
+        where: {
+          number
+        }
+      }],
+    });
+
+    return customer;
   }
 }
+
+export const customerRepository = new CustomerRepository();
+
