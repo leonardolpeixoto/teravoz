@@ -2,9 +2,9 @@ import { getConfig } from './index';
 
 let config = getConfig({
   development: {
-    database: 'teravoz',
-    username: 'root',
-    password: 'root',
+    database: process.env.DATABASE_NAME,
+    username: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
     host: 'localhost',
     dialect: 'mysql',
     define: {
@@ -16,9 +16,9 @@ let config = getConfig({
   },
 
   production: {
-    database: 'teravoz',
-    username: 'root',
-    password: 'root',
+    database: process.env.DATABASE_NAME,
+    username: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
     host: 'localhost',
     dialect: 'mysql',
     define: {
@@ -30,9 +30,9 @@ let config = getConfig({
   },
 
   test: {
-    database: 'teravoz',
-    username: 'root',
-    password: 'root',
+    database: process.env.DATABASE_NAME,
+    username: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
     host: 'localhost',
     dialect: 'mysql',
     logging: false,
@@ -43,5 +43,6 @@ let config = getConfig({
       freezeTableName: true
     },
   },
-})
+});
+
 export default config();

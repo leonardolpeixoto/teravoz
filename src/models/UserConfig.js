@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  const User = sequelize.define('UserConfig', {
+  const UserConfig = sequelize.define('UserConfig', {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
@@ -7,18 +7,24 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       unique: true  
     },
+    
     user_name: {
       type: DataTypes.STRING(155),
       allowNull: false,
       unique: true
     },
+    
     password: {
       type: DataTypes.STRING(255),
       allowNull: false
     }
   }, {
-    tableName: 'user_info'
+    tableName: 'user_config'
   });
   
-  return User;
+  UserConfig.prototype.authorization = function Authorization() {
+    return Buffer.from(`${this.user_name}:${this.password}`).toString('base64');
+  }
+  
+  return UserConfig;
 };

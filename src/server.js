@@ -1,16 +1,16 @@
 import { Server } from 'http';
-import config from './config/server';
+// import config from './config/server';
 import app from './app';
 
-const {
-  port,
-} = config;
+// const {
+//   port,
+// } = config;
 
 const httpServer = Server(app);
 
-httpServer.listen(port, () => {
-  console.log(`listening on ${portExpress}`);
+httpServer.listen(8080, () => {
+  console.log(`listening on 8080`);
 });
 
 
-export default httpServer;
+// export default httpServer;
