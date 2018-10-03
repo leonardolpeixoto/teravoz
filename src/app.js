@@ -9,11 +9,6 @@ import routes from './routes';
 const app = express();
 
 //
-// Load Models
-// -----------------------------------------------------------------------------
-// models(app);
-
-//
 // Register Node.js middleware
 // -----------------------------------------------------------------------------
 app.use(helmet());

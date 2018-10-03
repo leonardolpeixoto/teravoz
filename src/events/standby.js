@@ -1,5 +1,6 @@
 import { customerRepository } from '../repository/CustomerRepository';
 import delegate from '../service/delegate';
+import prospectiveCustomerRepository from '../repository/ProspectiveCustomer';
 
 export default (event) => {
   event.on('call.standby', async ({ their_number, call_id }) => {
@@ -12,6 +13,7 @@ export default (event) => {
         queueName = "CustomerAttendace";
       } else {
         queueName = "FirstAttendace";
+        prospectiveCustomerRepository.save(their_number);
       }
 
       queue = await queueRepository.findByName(queueName);

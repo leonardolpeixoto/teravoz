@@ -1,11 +1,10 @@
-import HttpStatus from 'http-status';
-import apiEvents from '../events';
+import event from '../events';
 
 export default () => {
   const webhook = async (req, res, next) => {
-    const event = req.body;
+    const eventRequest = req.body;
 
-    apiEvents.emit(event.type, event);
+    event.emit(eventRequest.type, eventRequest);
   }
   
   return {

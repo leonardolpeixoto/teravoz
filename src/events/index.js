@@ -1,9 +1,10 @@
 import EventEmitter from 'events';
-
-class ApiEvent extends EventEmitter {}
+import standByRegister from './standby';
 
 class ApiEvent extends EventEmitter {}
 
 const apiEvent = new ApiEvent();
+
+standByRegister(apiEvent);
 
 export default apiEvent;

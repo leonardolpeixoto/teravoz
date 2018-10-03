@@ -20,7 +20,7 @@ export default function (sequelize, DataTypes) {
       allowNull: false,
     },
   }, {
-    tableName: 'user_config',
+    tableName: 'contact',
   });
 
   Contact.associate = function associate() {

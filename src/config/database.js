@@ -5,7 +5,7 @@ let config = getConfig({
     database: process.env.DATABASE_NAME,
     username: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
-    host: 'localhost',
+    host: '192.168.4.42',
     dialect: 'mysql',
     define: {
       underscored: true,
@@ -19,7 +19,7 @@ let config = getConfig({
     database: process.env.DATABASE_NAME,
     username: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
-    host: 'localhost',
+    host: '192.168.4.42',
     dialect: 'mysql',
     define: {
       underscored: true,
@@ -33,7 +33,7 @@ let config = getConfig({
     database: process.env.DATABASE_NAME,
     username: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
-    host: 'localhost',
+    host: '192.168.4.42',
     dialect: 'mysql',
     logging: false,
     define: {

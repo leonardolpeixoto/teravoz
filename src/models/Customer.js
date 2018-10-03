@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+export default function(sequelize, DataTypes) {
   const Customer = sequelize.define('Customer', {
     id: {
       type: DataTypes.INTEGER(11),
@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     }
 
   }, {
-    tableName: 'user_config'
+    tableName: 'customer'
   });
   
   Customer.associate = function associate() {

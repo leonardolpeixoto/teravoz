@@ -1,16 +1,12 @@
 import { Server } from 'http';
-// import config from './config/server';
-import app from './app';
+import Socket from './infra/socket/register';
 
-// const {
-//   port,
-// } = config;
+import app from './app';
 
 const httpServer = Server(app);
 
-httpServer.listen(8080, () => {
-  console.log(`listening on 8080`);
+httpServer.listen(3000, () => {
+  console.log(`listening on 3000`);
 });
 
-
-// export default httpServer;
+Socket(httpServer);

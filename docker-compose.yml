@@ -12,8 +12,8 @@ services:
       - production-network
     depends_on: 
       - "node1"
-      - "node2"
-      - "node3"
+      # - "node2"
+      # - "node3"
   mysql:
     image: mysql:5.7
     volumes:
@@ -40,31 +40,31 @@ services:
     depends_on:
       - "mysql"
 
-  node2:
-    build:
-      dockerfile: ./docker/node.dockerfile
-      context: .
-    image: leonardo/teravoz
-    container_name: teravoz-2
-    ports:
-      - "3000"
-    networks: 
-      - production-network
-    depends_on:
-      - "mysql"
+  # node2:
+  #   build:
+  #     dockerfile: ./docker/node.dockerfile
+  #     context: .
+  #   image: leonardo/teravoz
+  #   container_name: teravoz-2
+  #   ports:
+  #     - "3000"
+  #   networks: 
+  #     - production-network
+  #   depends_on:
+  #     - "mysql"
 
-  node3:
-    build:
-      dockerfile: ./docker/node.dockerfile
-      context: .
-    image: leonardo/teravoz
-    container_name: teravoz-3
-    ports:
-      - "3000"
-    networks: 
-      - production-network
-    depends_on:
-      - "mysql"
+  # node3:
+  #   build:
+  #     dockerfile: ./docker/node.dockerfile
+  #     context: .
+  #   image: leonardo/teravoz
+  #   container_name: teravoz-3
+  #   ports:
+  #     - "3000"
+  #   networks: 
+  #     - production-network
+  #   depends_on:
+  #     - "mysql"
 
 networks: 
   production-network:
