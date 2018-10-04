@@ -5,6 +5,8 @@ export default () => {
     const eventRequest = req.body;
 
     event.emit(eventRequest.type, eventRequest);
+
+    res.send('ok');
   }
   
   return {
