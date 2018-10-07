@@ -4,7 +4,8 @@ Aplicação para automatizar o processo de recebimento de ligações e encaminha
 ### Getting Started
 Depois de clonarmos o projeto devemos criar um arquivo chamado **.env** que contém as configurações referente ao nosso database, no projeto encontra-se uma **.env.exemplo** para que possa ser usar como base. 
 
-Após a criação do arquivo, devemos criar nosso schema no banco de acordo como foi configura do **.env**.   
+Após a criação do arquivo, devemos criar nosso schema no banco de acordo como foi configura do **.env**. 
+
 
 Com tudo configurado chegou a hora de instalar nossas dependências, você pode usar tanto o **npm**, quanto o **yarn**:
 
@@ -17,13 +18,20 @@ Para rodar nossa aplicação em modo de desenvolvimento devemos utilizar o coman
 ```shell
 npm start #yarn start
 ```
-Esse comando será responsável por subir nosso servidor e criar as respectivas tabelas em nosso database caso elas ainda não existam.
 
 Já para rodar nossa aplicação em modo de produção utilizamos o comando:
 
 ```shell
 npm run server #yarn server
 ```
-### Prerequisites
-Para o funcionamento da aplicação devemos [instalar](https://nodejs.org/en/download/) o node na versão 8.12 ou o [docker](https://www.docker.com/) para aconteinerização, caso não saiba o que é docker você pode dar uma lida nesse [artigo](https://medium.com/@leonardopeixoto/docker-bl%C3%A1-bl%C3%A1-bl%C3%A1-509294c0df4a) sobre o assunto.
 
+Caso ocorra um error na inicilização com relação ao sequelize dê um **ctr+c** e suba o servidor novamente, esse problema decorre da relação entre tabelas que ainda não existe, será corrigido na próxima release.
+
+Tanto o **npm start** quanto o **npm run server** cria nossas tables. Com as tabelas criadas cabe a nós inserir os dados para o funcionamento das nossas regras de negócio corretamente utilize o seguinte comando:
+
+```shell
+npm run seed
+```
+
+### Prerequisites
+Para o funcionamento da aplicação devemos [instalar](https://nodejs.org/en/download/) o node na versão 8.12 ou o [docker](https://www.docker.com/) para aconteinerização, caso não saiba o que é docker você pode dar uma lida nesse [artigo](https://medium.com/@leonardopeixoto/docker-bl%C3%A1-bl%C3%A1-bl%C3%A1-509294c0df4a) escrito por mim sobre docker.
