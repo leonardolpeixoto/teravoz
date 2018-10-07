@@ -1,4 +1,4 @@
-import models from '../models';
+import models from '../data/models';
 class ContactRepository {
   constructor() {
     this.contactdb = models.model('Contact');

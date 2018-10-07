@@ -1,4 +1,4 @@
-import models from '../models';
+import models from '../data/models';
 import logger from '../infra/logger';
 
 class CustomerRepository {

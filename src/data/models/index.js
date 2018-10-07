@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import config from '../config/database';
+import config from '../../config/database';
 import * as fs from 'fs';
 import * as path from 'path';
 
