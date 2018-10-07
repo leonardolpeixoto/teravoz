@@ -14,8 +14,12 @@
     "stop-server": "pm2 stop ./dist/server.js",
     "test-integration": "NODE_ENV=test mocha --opts tests/mocha.opts tests/integration/**/*.js",
     "test-unit": "NODE_ENV=test mocha --opts tests/mocha.opts tests/unit/**/*.js",
-    "model": "./script/create_model.sh",
     "doc": "esdoc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "repository": {
     "type": "git",

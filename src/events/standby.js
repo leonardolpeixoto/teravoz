@@ -7,13 +7,13 @@ import delegate from '../service/delegate';
 export default (event) => {
   event.on('call.standby', async ({ their_number, call_id }) => {
     try {
-      let queueName   = '';
-      const customer  = await customerRepository.findByContact(their_number);
-      
-      if(customer) {
-        queueName = "Customer Attendace";
+      let queueName = '';
+      const customer = await customerRepository.findByContact(their_number);
+
+      if (customer) {
+        queueName = 'Customer Attendace';
       } else {
-        queueName = "First Attendace";
+        queueName = 'First Attendace';
         prospectiveCustomerRepository.save(their_number);
       }
 
@@ -22,5 +22,5 @@ export default (event) => {
     } catch (error) {
       event.emit('error', error);
     }
-  })
-}
+  });
+};

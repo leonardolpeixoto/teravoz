@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:8-alpine
 MAINTAINER Leonardo Peixoto
 ENV NODE_ENV=development
 

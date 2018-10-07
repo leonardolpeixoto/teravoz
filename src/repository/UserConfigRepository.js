@@ -16,4 +16,4 @@ class UserConfingRepository {
 
 const userConfigRepository = new UserConfingRepository();
 
-export default userConfigRepository; 
+export default userConfigRepository;

@@ -5,13 +5,13 @@ let config = getConfig({
     database: process.env.DATABASE_NAME,
     username: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
-    host: '192.168.4.42',
+    host: process.env.DATABASE_HOST || 'localhost',
     dialect: 'mysql',
     define: {
       underscored: true,
       charset: 'utf8',
       timestamps: false,
-      freezeTableName: true
+      freezeTableName: true,
     },
   },
 
@@ -19,13 +19,13 @@ let config = getConfig({
     database: process.env.DATABASE_NAME,
     username: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
-    host: '192.168.4.42',
+    host: process.env.DATABASE_HOST || 'localhost',
     dialect: 'mysql',
     define: {
       underscored: true,
       charset: 'utf8',
       timestamps: false,
-      freezeTableName: true
+      freezeTableName: true,
     },
   },
 
@@ -33,14 +33,14 @@ let config = getConfig({
     database: process.env.DATABASE_NAME,
     username: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
-    host: '192.168.4.42',
+    host: process.env.DATABASE_HOST || 'localhost',
     dialect: 'mysql',
     logging: false,
     define: {
       underscored: true,
       charset: 'utf8',
       timestamps: false,
-      freezeTableName: true
+      freezeTableName: true,
     },
   },
 });

@@ -10,4 +10,3 @@ router
   .post('/', asyncFuncExpress(webhook));
 
 export default router;
-  

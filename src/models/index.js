@@ -3,7 +3,7 @@ import config from '../config/database';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const Op = Sequelize.Op;
+const { Op } = Sequelize;
 const operatorsAliases = {
   $eq: Op.eq,
   $ne: Op.ne,
@@ -38,14 +38,14 @@ const operatorsAliases = {
   $any: Op.any,
   $all: Op.all,
   $values: Op.values,
-  $col: Op.col
+  $col: Op.col,
 };
 
 config.operatorsAliases = operatorsAliases;
 
-const sequelize  = new Sequelize(config);
+const sequelize = new Sequelize(config);
 const baseFolder = __dirname;
-const indexFile  = 'index.js' 
+const indexFile = 'index.js';
 
 fs
   .readdirSync(baseFolder)
