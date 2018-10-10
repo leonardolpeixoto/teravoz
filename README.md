@@ -1,5 +1,8 @@
 # Teravoz
-Aplicação para automatizar o processo de recebimento de ligações e encaminhamento para sua respectiva fila de atendimento, utilizando a api da [**Teravoz**](https://developers.teravoz.com.br/)
+Aplicação para automatizar o processo de recebimento de ligações e encaminhamento para sua respectiva fila de atendimento, integrado a api da [Teravoz](https://developers.teravoz.com.br/)
+
+### Prerequisites
+Para o funcionamento da aplicação devemos [instalar](https://nodejs.org/en/download/) o node na versão 8.12 ou o [docker](https://www.docker.com/) para aconteinerização, caso não saiba o que é docker você pode dar uma lida nesse [artigo](https://medium.com/@leonardopeixoto/docker-bl%C3%A1-bl%C3%A1-bl%C3%A1-509294c0df4a) escrito por mim sobre docker.
 
 ### Getting Started
 Depois de clonarmos o projeto devemos criar um arquivo chamado **.env** que contém as configurações referente ao nosso database, no projeto encontra-se uma **.env.exemplo** para que possa ser usar como base. 
@@ -32,6 +35,5 @@ Tanto o **npm start** quanto o **npm run server** cria nossas tables. Com as tab
 ```shell
 npm run seed
 ```
-
-### Prerequisites
-Para o funcionamento da aplicação devemos [instalar](https://nodejs.org/en/download/) o node na versão 8.12 ou o [docker](https://www.docker.com/) para aconteinerização, caso não saiba o que é docker você pode dar uma lida nesse [artigo](https://medium.com/@leonardopeixoto/docker-bl%C3%A1-bl%C3%A1-bl%C3%A1-509294c0df4a) escrito por mim sobre docker.
+### Business Rules
+Quando há uma ligação a api [Teravoz](https://developers.teravoz.com.br/)
