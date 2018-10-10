@@ -55,6 +55,6 @@ Depois de delegar uma ligação para a fila então há a confirmação por parte
 Ao terminar a ligação é disparado esse evento o qual é enviado para o cliente removendo o card da tela.
 
 ### Como testar
-Para testar podemos usar o docker, criei um [rojeto](https://github.com/leonardolpeixoto/implatation) para automatizar o processo de implantação, depois do serviço em execução vocês podem testar as ações via postman, se preferir, enviando requisições post para **http://localhost:3001/webhook** não se esqueçam de settar no header o Content-Type para **application/json**. O corpo das requisições deve ser iguais ao definido na documentação da [Teravoz](https://developers.teravoz.com.br/) os únicos apresentam alguma ação relevante no sistema são **call.standby**, **actor.entered**, e **call.finished**. 
+Para testar podemos usar o docker, criei um [projeto](https://github.com/leonardolpeixoto/implatation) para automatizar o processo de implantação, depois do serviço em execução vocês podem testar as ações via postman, se preferir, enviando requisições post para **http://localhost:3001/webhook** não se esqueçam de settar no header o Content-Type para **application/json**. O corpo das requisições deve ser iguais ao definido na documentação da [Teravoz](https://developers.teravoz.com.br/) os únicos apresentam alguma ação relevante no sistema são **call.standby**, **actor.entered**, e **call.finished**. 
 
 Para ver as ligações que estão acontecem vocês podem acessar o client a partir do endereço **http://localhost:3000** 
